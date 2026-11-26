@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BettaShop - Jual Ikan Cupang Berkualitas</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    min-height: 100vh;
+  }
+
+  /* NAVBAR */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00c6ff, #00ffb3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+  }
+  nav ul a {
+    color: #ddd;
+    text-decoration: none;
+    transition: .3s;
+  }
+  nav ul a:hover { color: #00ffb3; }
+
+  /* HERO */
+  .hero {
+    text-align: center;
+    padding: 90px 20px 60px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #00c6ff, #00ffb3, #ff6ec4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero p {
+    color: #cfd8dc;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* PRODUK */
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin: 40px 0 10px;
+    color: #00ffb3;
+  }
+  .section-sub {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 28px;
+    padding: 0 8% 80px;
+  }
+  .card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 255, 179, 0.25);
+  }
+  .card .img-wrap {
+    height: 200px;
+    overflow: hidden;
+    background: #0a141b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+  }
+  .card-body {
+    padding: 18px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+  }
+  .price {
+    color: #00ffb3;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  .sold {
+    display: inline-block;
+    background: linear-gradient(90deg, #ff6ec4, #ff9a44);
+    color: #fff;
+    font-size: .8rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 14px;
+    align-self: flex-start;
+  }
+  .btn-wa {
+    margin-top: auto;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #25D366, #128C7E);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+  }
+  .btn-wa:hover { filter: brightness(1.15); }
+
+  /* KONTAK */
+  .contact {
+    background: rgba(0,0,0,0.4);
+    padding: 60px 8%;
+    text-align: center;
+  }
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #00c6ff;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .contact-links a {
+    padding: 14px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+    color: #fff;
+  }
+  .wa-link { background: linear-gradient(90deg, #25D366, #128C7E); }
+  .email-link { background: linear-gradient(90deg, #ff6ec4, #7873f5); }
+  .contact-links a:hover { transform: scale(1.05); }
+
+  footer {
+    text-align: center;
+    padding: 25px;
+    color: #888;
+    font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">🐟 BettaShop</div>
+    <ul>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Ikan Cupang Berkualitas</h1>
+    <p>Temukan cupang hias terbaik dengan warna memukau, sehat, dan siap kirim ke seluruh Indonesia. Sudah dipercaya banyak pecinta cupang!</p>
+  </header>
+
+  <!-- Produk -->
+  <h2 class="section-title" id="produk">Koleksi Kami</h2>
+  <p class="section-sub">Semua ikan sudah terjual 10+ — bukti kualitas terpercaya ✨</p>
+
+  <div class="grid">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="img-wrap">🐠</div>
+      <div class="card-body">
+        <h3>Cupang Halfmoon</h3>
+        <div class="price">Rp 75.000</div>
+        <span class="sold">🔥 Terjual 10</span>
+        <a class="btn-wa" href="https://wa.me/6285641808217?text=Halo,%20saya%20mau%20pesan%20Cupang%20Halfmoon" target="_blank">Pesan via WA</a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="img-wrap">🐟</div>
+      <div class="card-body">
+        <h3>Cupang Plakat</h3>
+        <div class="price">Rp 60.000</div>
+        <span class="sold">🔥 Terjual 10</span>
+        <a class="btn-wa" href="https://wa.me/6285641808217?text=Halo,%20saya%20mau%20pesan%20Cupang%20Plakat" target="_blank">Pesan via WA</a>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="img-wrap">🐡</div>
+      <div class="card-body">
+        <h3>Cupang Crown Tail</h3>
+        <div class="price">Rp 85.000</div>
+        <span class="sold">🔥 Terjual 10</span>
+        <a class="btn-wa" href="https://wa.me/6285641808217?text=Halo,%20saya%20mau%20pesan%20Cupang%20Crown%20Tail" target="_blank">Pesan via WA</a>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="img-wrap">🎏</div>
+      <div class="card-body">
+        <h3>Cupang Double Tail</h3>
+        <div class="price">Rp 95.000</div>
+        <span class="sold">🔥 Terjual 10</span>
+        <a class="btn-wa" href="https://wa.me/6285641808217?text=Halo,%20saya%20mau%20pesan%20Cupang%20Double%20Tail" target="_blank">Pesan via WA</a>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <div class="img-wrap">🐠</div>
+      <div class="card-body">
+        <h3>Cupang Giant</h3>
+        <div class="price">Rp 150.000</div>
+        <span class="sold">🔥 Terjual 10</span>
+        <a class="btn-wa" href="https://wa.me/6285641808217?text=Halo,%20saya%20mau%20pesan%20Cupang%20Giant" target="_blank">Pesan via WA</a>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <div class="img-wrap">🐟</div>
+      <div class="card-body">
+        <h3>Cupang Koi</h3>
+        <div class="price">Rp 120.000</div>
+        <span class="sold">🔥 Terjual 10</span>
+        <a class="btn-wa" href="https://wa.me/6285641808217?text=Halo,%20saya%20mau%20pesan%20Cupang%20Koi" target="_blank">Pesan via WA</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kontak -->
+  <section class="contact" id="kontak">
+    <h2>Hubungi Kami</h2>
+    <div class="contact-links">
+      <a class="wa-link" href="https://wa.me/6285641808217" target="_blank">💬 WhatsApp: 0856-4180-8217</a>
+      <a class="email-link" href="mailto:muhamadranggasaputra1933@gmail.com">✉️ Email Kami</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 BettaShop — Dibuat dengan ❤️ untuk pecinta ikan cupang
+  </footer>
+
+</body>
+</html>
